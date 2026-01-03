@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Infinity Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="title">
+                <span class="infinity-icon">∞</span>
+                Infinity Tic-Tac-Toe
+            </h1>
+            <p class="subtitle">각 플레이어는 최대 3개의 돌만 유지할 수 있습니다</p>
+        </header>
+
+        <!-- Mode Selection -->
+        <div class="mode-selection" id="modeSelection">
+            <h2>게임 모드 선택</h2>
+            <div class="mode-buttons">
+                <button class="mode-btn" id="pvpBtn" data-mode="pvp">
+                    <span class="mode-icon">👥</span>
+                    <span class="mode-name">PvP</span>
+                    <span class="mode-desc">2인 대결</span>
+                </button>
+                <button class="mode-btn" id="pveEasyBtn" data-mode="pve-easy">
+                    <span class="mode-icon">🤖</span>
+                    <span class="mode-name">PvE (Easy)</span>
+                    <span class="mode-desc">AI 대결 - 쉬움</span>
+                </button>
+                <button class="mode-btn" id="pveHardBtn" data-mode="pve-hard">
+                    <span class="mode-icon">🧠</span>
+                    <span class="mode-name">PvE (Hard)</span>
+                    <span class="mode-desc">AI 대결 - 어려움</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Board -->
+        <div class="game-container" id="gameContainer" style="display: none;">
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <div class="player-info player1-info">
+                    <div class="player-label">Player 1</div>
+                    <div class="stones-count" id="player1Stones">
+                        <span class="stone-dot"></span>
+                        <span class="stone-dot"></span>
+                        <span class="stone-dot"></span>
+                    </div>
+                </div>
+                
+                <div class="turn-indicator" id="turnIndicator">
+                    <span class="current-turn">Player 1's Turn</span>
+                    <div class="mode-badge" id="modeBadge">PvP</div>
+                </div>
+                
+                <div class="player-info player2-info">
+                    <div class="player-label">Player 2</div>
+                    <div class="stones-count" id="player2Stones">
+                        <span class="stone-dot"></span>
+                        <span class="stone-dot"></span>
+                        <span class="stone-dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Board -->
+            <div class="board" id="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="controls">
+                <button class="control-btn" id="restartBtn">
+                    <span class="btn-icon">🔄</span>
+                    다시 시작
+                </button>
+                <button class="control-btn" id="changeModeBtn">
+                    <span class="btn-icon">🎮</span>
+                    모드 변경
+                </button>
+            </div>
+        </div>
+
+        <!-- Win Modal -->
+        <div class="modal" id="winModal">
+            <div class="modal-content">
+                <div class="win-icon" id="winIcon">🏆</div>
+                <h2 class="win-title" id="winTitle">Player 1 Wins!</h2>
+                <p class="win-message">축하합니다! 3개를 연결했습니다!</p>
+                <div class="modal-buttons">
+                    <button class="modal-btn primary" id="playAgainBtn">
+                        <span class="btn-icon">🔄</span>
+                        다시 플레이
+                    </button>
+                    <button class="modal-btn secondary" id="changeModeBtnModal">
+                        <span class="btn-icon">🎮</span>
+                        모드 변경
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="ai.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
