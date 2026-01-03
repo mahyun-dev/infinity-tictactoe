@@ -40,10 +40,10 @@ python3 -m http.server 8000
 # 브라우저에서 http://localhost:8000 접속
 
 # 방법 3: Node.js http-server
-npx http-server
-
-# 방법 4: [여기를 클릭하여 실행](https://mahyun-dev.github.io/infinity-tictactoe/)
+npx http-server 
 ```
+
+3. [또는 여기를 클릭하여 실행](https://mahyun-dev.github.io/infinity-tictactoe/)
 
 ## 📁 프로젝트 구조
 
